@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+---
+
+# Issue Tracking
+
+If I ask you to investigate an error, first check to see if a previous document of it already exists in the `Issues/` directory.
+
+If it does, figure out if we discovered anything new, and update the document. If not, just use the existing knowledge and we can resume debugging from there.
+
+The markdown file should be named human readable something like: `ArgumentException - Already Added.md`
+
+Don't write down unverified claims. Just facts that were analyzed.
+
+**Format issues as follows:**
+
+---
+
+# Issue
+
+## Description
+
+Ask the user (me) to describe the problem they saw, and provide the logs. Take the description and the logs and summarize it in this section of the file.
+
+## Resolution
+
+Only add this section if I told you your solutions worked. It shall be after **Description** and before **Logs** section. But only if I told you we fixed it.
+
+## Logs
+
+If user has provided the logs, place the logs in this section.
+
+## Analysis
+
+After getting the info, perform a codebase analysis to see if the issue is related, and what you think the cause is.

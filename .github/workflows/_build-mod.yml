@@ -1,0 +1,18 @@
+name: Workflow Call - Build & Push
+
+on:
+  workflow_call:
+
+jobs:
+  build:
+    name: Build & Push
+    runs-on: ubuntu-latest # Docker commands don't work on my self-hosted runners (since they are also Docker)
+    outputs:
+      cache_hit: ${{ steps.is-push-needed-hash-test.outputs.cache-hit }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build C# mod
+        run: |
+          ./build.sh

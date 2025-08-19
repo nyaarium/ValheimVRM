@@ -1,5 +1,7 @@
 # ValheimVRM
 
+> ⚠️ Linux restructuring in progress ⚠️
+
 **This mod requires [BepInEx](https://thunderstore.io/c/valheim/p/denikson/BepInExPack_Valheim/) to be installed.**
 
 This fork is actively developed and maintained. If you need help, want to request a feature, or found a bug; Head on over to the [discord](https://discord.gg/q3wuVMCvXE).

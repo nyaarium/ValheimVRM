@@ -1,0 +1,37 @@
+# Uses secrets:
+#   DOCKER_PASSWORD
+#   DOCKER_USERNAME
+#   PAT_TOKEN
+
+name: Push (main)
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+jobs:
+  BuildDocker:
+    uses: ./.github/workflows/_build-docker.yml
+    secrets: inherit
+    permissions:
+      actions: read
+      contents: read
+
+  BuildMod:
+    needs: BuildDocker
+    uses: ./.github/workflows/_build-mod.yml
+    secrets: inherit
+    permissions:
+      actions: read
+      contents: read
+
+  Publish:
+    needs: BuildMod
+    uses: ./.github/workflows/_publish.yml
+    secrets: inherit
+    permissions:
+      actions: read
+      contents: read
